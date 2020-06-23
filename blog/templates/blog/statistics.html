@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+    <div class="d-flex d-flex flex-column justify-content-center align-items-center">
+        <form action="counter"  method="GET" class="mb-5">
+            <input type="text" name = "word">
+            <input type="submit" value="Search"/>
+        </form>
+        <h6>Statistics</h6>
+
+        <div class="mt-3">
+            {% if word %}
+                <p>{{ word }} is used {{ times }} {% if times == 1 %} time {% else %}times{% endif %}</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock content %}
